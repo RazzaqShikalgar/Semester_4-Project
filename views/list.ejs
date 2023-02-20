@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/path/to/cdn/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/newpg.css">
+
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+   <link href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="css/swiper.css">
+<title>Travel Log</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg   navbar-dark bg-dark bg-transparent">
+            <div class="container-fluid tglr">
+                <img class="mx-2 logo" src="/images/person.jpg" alt="Bootstrap" width="60" height="60">
+              <a class="navbar-brand" href="#">Travel Log</a>
+              <button class="navbar-toggler  navbar-toggle x collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon btn-light"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-05 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a target="_blank" href="/review" class="nav-link" href="#">Review</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Blog Section
+                    </a>
+                    <ul class="dropdown-menu ">
+                      <li><a class="dropdown-item" href="#">Add New Blog</a></li>
+                      <li><a class="dropdown-item" href="#">Review Section</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Home ?</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login" >Explore</a>
+                  </li>
+                  
+                  
+                </ul>
+                
+                    <button  class=" btn btn-outline-light btn-dark mx-1" type="submit"><a class="linkbtn" target="_blank" href="/login">Login </a></button>
+                    <button  class=" btn btn-outline-light mx-3 " type="submit"><a class="linkbtn" target="_blank" href="/signup">SignUp</a></button>
+                    
+                </div>
+              
+        </div>
+        
+          </nav>
+        </div>
+        <div class="hero">
+        <img src="/images/bg1.jpg" alt="Background" width="100%" height="100%">
+        <h1>WanderW(<%=webname%>)</h1>
+        <p>The internet’s source for visuals.Powered by creators everywhere.</p>
+        <form class="d-flex searchbtn" role="search">
+            <input class="form-control col-lg-4  mx-4" type="search" placeholder="Where to go?" aria-label="Search">
+            <button class="btn btn-outline-light mx-2" type="submit">Search</button>
+          </form>   
+    </div>
+<!--     
+    <section class="padd">
+      <div class="container-lg headline">
+      <h1>"Get out there and Travel"</h1>
+      <p>Best of the Best tours, attractions & activities you won't want to miss.<br>“For my part, I travel not to go anywhere, but to go. I travel for travel’s sake. The great affair is to move.”</p>
+    </div>
+    </section> -->
+
+
+    <!-- about section starts  -->
+
+<section class="about" id="about">
+
+  <div class="video-container" data-aos="fade-right" data-aos-delay="300">
+      <video src="images/about-vid-2.mp4" muted autoplay loop class="video"></video>
+      <div class="controls">
+          <span class="control-btn" data-src="images/about-vid-1.mp4"></span>
+          <span class="control-btn" data-src="images/about-vid-2.mp4"></span>
+          <span class="control-btn" data-src="images/about-vid-3.mp4"></span>
+      </div>
+  </div>
+
+  <div class="content" data-aos="fade-left" data-aos-delay="600">
+      <span>why choose us?</span>
+      <h3>Nature's Majesty Awaits You</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde fugit repellat error deserunt nam aperiam odit libero quos provident. Nostrum?</p>
+      <a href="#" class="btn btn-outline-dark">Read more</a>
+  </div>
+
+</section>
+
+
+<!-- destination section starts  -->
+
+<section class="destination" id="destination">
+
+  <div class="heading">
+      <span>our destination's</span>
+      <h1>make yours destination</h1>
+  </div>
+
+  <div class="box-container">
+
+      <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <div class="image">
+              <img src="images/des-1.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <div class="image">
+              <img src="images/des-2.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="450">
+          <div class="image">
+              <img src="images/des-3.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="600">
+          <div class="image">
+              <img src="images/des-4.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more  <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="750">
+          <div class="image">
+              <img src="images/des-5.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more  <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="900">
+          <div class="image">
+              <img src="images/des-6.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more  <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="1150">
+          <div class="image">
+              <img src="images/des-7.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more  <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="1300">
+          <div class="image">
+              <img src="images/des-8.jpg" alt="">
+          </div>
+          <div class="content">
+              <h3>tours & travel</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <a href="#">Read more  <i class="fas fa-angle-right"></i></a>
+          </div>
+      </div>
+
+  </div>
+
+</section>
+
+<!-- destination section ends -->
+    <!-- ---------Cards_-------------- -->
+    <section>
+      <div class="sec2">
+      <div class=" container my-3 mt-5" id="featureContainer">
+        <div class="row mx-auto my-auto justify-content-center">
+          <div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Controls. OPTIONAL -->
+            <div class="float-end pe-md-4">
+              <a class="indicator" href="#featureCarousel" role="button" data-bs-slide="prev">
+                <!-- <i class="fa-solid fa-arrow-right"></i>
+                 -->
+                 <i class="fa fa-arrow-left fa-solid"></i>
+              </a> &nbsp;&nbsp;
+              <a class="w-auto indicator" href="#featureCarousel" role="button" data-bs-slide="next">
+                <i class="fa fa-arrow-right"></i>        </a>
+            </div>
+            <!-- Add Slides To The Carousel -->
+            <div class="carousel-inner" role="listbox">
+              <h1>Where to Go Right Now</h1>
+              <p>Spots at the top of travellers’ must-go lists</p>
+              <div class="carousel-item active">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car1.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Green Grass</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car2.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">urban City</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car3.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Sun Rise</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car4.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Taj Mahal</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car5.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Delhi</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car6.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Indian Railways</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car7.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Rock Sculpture</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car8.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Himalayan Mountain</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="/images/car9.jpg" class="img-fluid">
+                    </div>
+                    <div class="card-img-overlays">Humayun's Tomb</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ... more slides here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    
+<section class="gallery" id="gallery">
+
+  <div class="heading">
+      <span>Our Spacious gallery</span>
+      <h1>we record memories</h1>
+  </div>
+  
+  <div class="box-container">
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+          <img src="images/gallery-img-1.jpg" alt="">
+          <span>travel spot</span>
+          <h3>iceland</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+          <img src="images/gallery-img-2.jpg" alt="">
+          <span>travel spot</span>
+          <h3>greenland</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+          <img src="images/gallery-img-3.jpg" alt="">
+          <span>travel spot</span>
+          <h3>alaska</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+          <img src="images/gallery-img-4.jpg" alt="">
+          <span>travel spot</span>
+          <h3>thailand</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+          <img src="images/gallery-img-5.jpg" alt="">
+          <span>travel spot</span>
+          <h3>brazil</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+          <img src="images/gallery-img-6.jpg" alt="">
+          <span>travel spot</span>
+          <h3>maldive</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+          <img src="images/gallery-img-7.jpg" alt="">
+          <span>travel spot</span>
+          <h3>iceland</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+          <img src="images/gallery-img-8.jpg" alt="">
+          <span>travel spot</span>
+          <h3>alaska</h3>
+      </div>
+
+      <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+          <img src="images/gallery-img-9.jpg" alt="">
+          <span>travel spot</span>
+          <h3>maldive</h3>
+      </div>
+
+  </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+    <!-------------------------------------------------------------- -->
+    <section id="page3">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            
+          <div class="carousel-item active">
+            <img src="/images/bg5.jpg" class="d-block w-100" width="100%" height="30%" alt="...">
+            
+          </div>
+          <div class="carousel-item active">
+            <img src="/images/bg4.jpg" class="d-block w-100" width="100%" height="30%" alt="...">
+            
+          </div>
+          <div class="carousel-item">
+            <img src="/images/bg2.jpg" class="d-block w-100" alt="..." width="100%" height="80%" >
+          </div>
+          <div class="carousel-item">
+            <img src="/images/bg3.jpg" class="d-block w-100" alt="..." width="100%" height="30%">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</section>
+<!-- --------------------------------------------------------------------------------------------- -->
+
+<section class="team section">
+  <div class="container">
+      <h1 class="section-title">Our Team </h1>
+      <div class="row box">
+          <div class="col">
+              <div class="team-item">
+                  <figure>
+                      <img src="/images/person.jpg" alt="">
+                      <figcaption>
+                          <div class="info">
+                              <h3>Razzaq Shikalgar</h3>
+                              <p>Project Lead</p>
+                          </div>
+                          <div class="social">
+                              <a href="#" class="twitter" data-abc="true"><i class="fa fa-twitter"></i></a>
+                              <a href="#" class="facebook" data-abc="true"><i class="fa fa-facebook"></i></a>
+                              <a href="#" class="google-plus" data-abc="true"><i class="fa fa-linkedin"></i></a>
+                          </div>
+                      </figcaption>
+                  </figure>
+              </div>
+          </div>
+          <div class="col">
+              <div class="team-item">
+                  <figure>
+                      <img src="/images/person.jpg" alt="">
+                      <figcaption>
+                          <div class="info">
+                              <h3>Mandvi Shukla</h3>
+                              <p>Backend Developer</p>
+                          </div>
+                          <div class="social">
+                              <a href="#" class="twitter" data-abc="true"><i class="fa fa-twitter"></i></a>
+                              <a href="#" class="facebook" data-abc="true"><i class="fa fa-facebook"></i></a>
+                              <a href="#" class="google-plus" data-abc="true"><i class="fa fa-linkedin"></i></a>
+                          </div>
+                      </figcaption>
+                  </figure>
+              </div>
+          </div>
+          <div class="col">
+              <div class="team-item">
+                  <figure>
+                      <img src="/images/person.jpg" alt="">
+                      <figcaption>
+                          <div class="info">
+                              <h3>Samyukta Shinde</h3>
+                              <p>Designer</p>
+                          </div>
+                          <div class="social">
+                              <a href="#" class="twitter" data-abc="true"><i class="fa fa-twitter"></i></a>
+                              <a href="#" class="facebook" data-abc="true"><i class="fa fa-facebook"></i></a>
+                              <a href="#" class="google-plus" data-abc="true"><i class="fa fa-linkedin"></i></a>
+                          </div>
+                      </figcaption>
+                  </figure>
+              </div>
+          </div>
+          <div class="col">
+              <div class="team-item">
+                  <figure>
+                      <img src="/images/person.jpg" alt="">
+                      <figcaption>
+                          <div class="info">
+                              <h3>Aaryan sorte</h3>
+                              <p>Back-end Developer</p>
+                          </div>
+                          <div class="social">
+                              <a href="#" class="twitter" data-abc="true"><i class="fa fa-twitter"></i></a>
+                              <a href="#" class="facebook" data-abc="true"><i class="fa fa-facebook"></i></a>
+                              <a href="#" class="google-plus" data-abc="true"><i class="fa fa-linkedin"></i></a>
+                          </div>
+                      </figcaption>
+                  </figure>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<script>
+document.querySelectorAll('.about .video-container .controls .control-btn').forEach(btn =>{
+  btn.onclick = () =>{
+      let src = btn.getAttribute('data-src');
+      document.querySelector('.about .video-container .video').src = src;
+  }
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/path/to/cdn/bootstrap.bundle.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+  </body>
+</html>
