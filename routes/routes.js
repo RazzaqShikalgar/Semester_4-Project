@@ -3,6 +3,7 @@ const app = express();
 const route = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const passport = require("passport");
 // const saltRound=10;
 // const encrypt = require("mongoose-encryption");
 //models
@@ -22,6 +23,16 @@ const User = require("../models/signup.js");
  });
  route.get("/review",function(req,res){
   res.render("card");
+ });
+//  route.get("/secrets",function(req,res){
+//   res.render("secrets");
+//  });
+ route.get("/secrets",function(req,res){
+  if (req.isAuthenticated()){
+    res.render("secrets");
+  } else{
+    res.redirect("/");
+  }
  });
 
  //Login & Signup
@@ -116,5 +127,18 @@ route.post("/login", function(req,res){
     }
   });
 });
-
+//session login
+route.post("/login",function(req,res){
+User.register({email:req.body.email},req.body.password,function(err,user){
+  if(err){
+    console.log(err);
+    res.redirect("/");
+  } else{
+    passport.authenticate("local")(req,res,function(){
+      res.redirect("/secrets");
+    });
+  }
+});
+});
+//session login
 module.exports = route;

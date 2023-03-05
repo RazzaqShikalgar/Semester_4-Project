@@ -29,16 +29,16 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(sessio({
-  secret: "Our Little Secret",
+app.use(session({
+  secret: "Our Little Secret.",
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
-// mongoose.connect("",{useNewUrlParser:true});
+// mongoose.set("useCreateIndex", true);
 
 app.use(routes);
 // a();
@@ -63,7 +63,10 @@ app.get('/',async(req, res) => {
 }
 });
 // --------------------------------------------------
-
+// session
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 // session
 app.listen(3000 , function() {
   console.log("Server started on port 3000.");
