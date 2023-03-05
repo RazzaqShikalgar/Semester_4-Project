@@ -28,6 +28,15 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+app.use(sessio({
+  secret: "Our Little Secret",
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 // mongoose.connect("",{useNewUrlParser:true});
 
@@ -55,7 +64,7 @@ app.get('/',async(req, res) => {
 });
 // --------------------------------------------------
 
-
+// session
 app.listen(3000 , function() {
   console.log("Server started on port 3000.");
 });

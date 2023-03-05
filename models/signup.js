@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const encrypt = require("mongoose-encryption");
+// const encrypt = require("mongoose-encryption");
+const bcrypt = require('bcrypt');
 // const route = express.Router();
 const userSchema =  new mongoose.Schema({
     name      : { type:String , required:true },
@@ -15,7 +16,12 @@ const userSchema =  new mongoose.Schema({
     tokens    : [{token:{ type:String,required:true}}]
 });
 
-const secret = "Thisisourlittlesecret.";
-userSchema.plugin(encrypt, {secret: secret , encryptedFields: ["password" ,"cpassword"]});
-
+userSchema.pre("save",async function(next){
+    if(this.isModified("password")){
+      this.password = await  bcrypt.hash(this.password,10);
+      this.cpassword = await bcrypt.hash(this.cpassword,10);
+    }
+    next();
+});
+userSc
 module.exports = mongoose.model('User', userSchema);

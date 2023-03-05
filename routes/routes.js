@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const route = express.Router();
 const mongoose = require('mongoose');
-const encrypt = require("mongoose-encryption");
+const bcrypt = require('bcrypt');
+// const saltRound=10;
+// const encrypt = require("mongoose-encryption");
 //models
 const User = require("../models/signup.js");
 
@@ -56,8 +58,8 @@ const User = require("../models/signup.js");
 module.exports = route;
 
 route.post("/signup", async (req, res) => {
-  // Checking that user filled in all fields
-  const { name, email, phone, password, cpassword } = req.body;
+    // Checking that user filled in all fielddfbs
+  const { name,email, phone, password, cpassword } = req.body; 
 
   if (!name || !email || !phone || !password || !cpassword) {
     return res.render("register", {message: "Please fill in all fields"});
@@ -67,6 +69,7 @@ route.post("/signup", async (req, res) => {
   return res.render("register", {message: "Please enter a valid phone number"});
   }
 else{
+
   try {
     // Checking user exists or not
     const userExist = await User.findOne({ email });
@@ -74,16 +77,19 @@ else{
       return res.render('register',{ message: "mail registred"});
     }
     // At the end creating a new user
-    const newUser = new User({ name, email, phone, password, cpassword });
+    const newUser = new User({ name, email,phone, password , cpassword });
     const createUser = await newUser.save();
     if (createUser) {
+      // console.log(md5('password'));
      return  res.render('register',{ message: "user created" });
     }
   } catch (err) {
     console.log(err);
   }
 }
+
 });
+
 
 //Login Page
 route.post("/login", function(req,res){
@@ -94,9 +100,15 @@ route.post("/login", function(req,res){
       console.log(err);
     } else{
       if(foundUser){
-        if(foundUser.password === password){
+       bcrypt.compare(password,foundUser.password,function(err,result){
+        if(result==true) {
           return  res.render("register",{message:'Logged in successfully'});
-        } 
+        }
+        else{
+          return res.render("register",{message:'Something went wrong'});
+        }
+       });
+        
       }
       else {
         return res.render("register",{message:'Something went wrong'});
@@ -104,4 +116,5 @@ route.post("/login", function(req,res){
     }
   });
 });
+
 module.exports = route;
