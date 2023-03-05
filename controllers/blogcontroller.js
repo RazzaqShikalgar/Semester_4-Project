@@ -26,7 +26,7 @@ exports.list = async(req, res) => {
                 },
         ]);
     } catch (error) {
-        console.log('err');
+        console.log('error');
     }
 }
 // Blogs.save();

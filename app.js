@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -8,6 +8,7 @@ const session = require('express-session');
 // const models = require()
 const routes = require('./routes/routes.js');
 const passport = require("passport");
+const encrypt = require("mongoose-encryption");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
@@ -16,6 +17,7 @@ const blogs = require('./controllers/blogcontroller.js');
 const cards = require('./controllers/cardscontroller.js');
 const Category = require('./models/category');
 const Blogs = require('./models/blogs');
+const User = require('./models/signup');
 const Cards = require('./models/cards');
 
 const app = express();
@@ -26,8 +28,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
-mongoose.connect("mongodb+srv://Razzaq:Razzaq%402003@cluster0.pysaqrm.mongodb.net/userDB",{useNewUrlParser:true});
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+// mongoose.connect("",{useNewUrlParser:true});
 
 app.use(routes);
 // a();
