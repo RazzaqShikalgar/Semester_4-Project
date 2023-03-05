@@ -4,12 +4,13 @@
   "description": "This is my Mini-Project (Sem 4)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "author": "Razzaq Shikalgar",
   "license": "ISC",
-  "engines":{
-    "node":"18.12.1"
+  "engines": {
+    "node": "18.12.1"
   },
   "dependencies": {
     "body-parser": "^1.20.1",
@@ -25,5 +26,14 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RazzaqShikalgar/Mini-Project-Sem4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RazzaqShikalgar/Mini-Project-Sem4/issues"
+  },
+  "homepage": "https://github.com/RazzaqShikalgar/Mini-Project-Sem4#readme"
 }

@@ -52,3 +52,22 @@ document.querySelectorAll('.about .video-container .controls .control-btn').forE
     });
 
 
+   
+
+  // Search Switch
+  $('.search-switch').on('click', function () {
+      $('.search-model').fadeIn(400);
+  });
+
+  $('.search-close-switch').on('click', function () {
+      $('.search-model').fadeOut(400, function () {
+          $('#search-input').val('');
+      });
+  });
+
+
+
+  $('.set-bg').each(function () {
+    var bg = $(this).data('setbg');
+    $(this).css('background-image', 'url(' + bg + ')');
+});
