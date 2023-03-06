@@ -66,7 +66,7 @@ const User = require("../models/signup.js");
   // });
 
 // Login Signup  
-module.exports = route;
+
 
 route.post("/signup", async (req, res) => {
     // Checking that user filled in all fielddfbs
