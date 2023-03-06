@@ -18,8 +18,11 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
   <link href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
   <link rel="stylesheet" href="css/swiper.css">
-  <title>hii Log</title>
+  <title>Travel Log</title>
 </head>
 
 <body>
@@ -208,60 +211,18 @@
     </div>
 
     <div class="box-container">
-
+      <%if(gallery != ''){%>
+        <%gallery.forEach(function(Gallery,index){%>
       <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-        <img src="images/gallery-img-1.jpg" alt="">
-        <span>travel spot</span>
-        <h3>iceland</h3>
+        <img src="images/gallery/<%=Gallery.image%>" alt="">
+        <span class="material-symbols-outlined">
+          north
+          </span>
+        <span><%= Gallery.description %></span>
+        <h3><%= Gallery.name %></h3>
       </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-        <img src="images/gallery-img-2.jpg" alt="">
-        <span>travel spot</span>
-        <h3>greenland</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-        <img src="images/gallery-img-3.jpg" alt="">
-        <span>travel spot</span>
-        <h3>alaska</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-        <img src="images/gallery-img-4.jpg" alt="">
-        <span>travel spot</span>
-        <h3>thailand</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-        <img src="images/gallery-img-5.jpg" alt="">
-        <span>travel spot</span>
-        <h3>brazil</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-        <img src="images/gallery-img-6.jpg" alt="">
-        <span>travel spot</span>
-        <h3>maldive</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-        <img src="images/gallery-img-7.jpg" alt="">
-        <span>travel spot</span>
-        <h3>iceland</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-        <img src="images/gallery-img-8.jpg" alt="">
-        <span>travel spot</span>
-        <h3>alaska</h3>
-      </div>
-
-      <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-        <img src="images/gallery-img-9.jpg" alt="">
-        <span>travel spot</span>
-        <h3>maldive</h3>
-      </div>
+      <%})%>
+      <% } %>
 
     </div>
 
