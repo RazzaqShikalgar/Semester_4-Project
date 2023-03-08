@@ -12,16 +12,16 @@ const encrypt = require("mongoose-encryption");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
-//Models and Controller Exports --------------------------------
-const a = require('./controllers/photocontroller.js');
-const blogs = require('./controllers/blogcontroller.js');
-const gallery = require('./controllers/gallerycontroller.js');
-const cards = require('./controllers/cardscontroller.js');
-const Category = require('./models/category');
-const Blogs = require('./models/blogs');
+// //Models and Controller Exports --------------------------------
+// const a = require('./controllers/photocontroller.js');
+// const blogs = require('./controllers/blogcontroller.js');
+// const gallery = require('./controllers/gallerycontroller.js');
+// const cards = require('./controllers/cardscontroller.js');
+// const Category = require('./models/category');
+// const Blogs = require('./models/blogs');
 const User = require('./models/signup');
-const Cards = require('./models/cards');
-const Gallery = require('./models/gallery');
+// const Cards = require('./models/cards');
+// const Gallery = require('./models/gallery');
 
 const app = express();
 
@@ -51,23 +51,24 @@ app.use(routes);
 // app.use(models);
 // -----------Card  Data------------
 
-app.get('/',async(req, res) => {
-  try {
-  const limitNumber = 8;
-  const blognumber = 3;
-  const cardNumber = 4;
-  const galleryNumber =20;
-  const categories = await Category.find({}).limit(limitNumber);
-  const blogs = await Blogs.find({}).limit(blognumber);
-  const cards = await Cards.find({}).limit(cardNumber);
-  const gallery = await Gallery.find({}).limit(galleryNumber);
-  const name="here";
-  res.render("list", {webname:name , categories ,blogs ,cards,gallery});
-  // console.log(categories);
-} catch (error) {
-  res.status(500).send({message: error.message || "Error Ocured"});
-}
-});
+// app.get('/',async(req,res) => {
+//   try {
+//   const limitNumber = 8;
+//   const blognumber = 3;
+//   const cardNumber = 4;
+//   const galleryNumber =20;
+//   // const User = 1;
+//   const categories = await Category.find({}).limit(limitNumber);
+//   const blogs = await Blogs.find({}).limit(blognumber);
+//   const cards = await Cards.find({}).limit(cardNumber);
+//   const gallery = await Gallery.find({}).limit(galleryNumber);
+//   const name="here";
+//   res.render("list",{message:'',names:'',webname:name,categories ,blogs ,cards,gallery});
+//   // console.log(categories);
+// } catch (error) {
+//   res.status(500).send({message: error.message || "Error Ocured"});
+// }
+// });
 // --------------------------------------------------
 // session
 passport.use(User.createStrategy());

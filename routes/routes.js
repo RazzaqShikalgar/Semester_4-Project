@@ -4,15 +4,51 @@ const route = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const passport = require("passport");
+// const cards = require('../controllers/cardscontroller.js');
 // const saltRound=10;
 // const encrypt = require("mongoose-encryption");
+//Models and Controller Exports --------------------------------
+const a = require('../controllers/photocontroller.js');
+const blogs = require('../controllers/blogcontroller.js');
+const gallery = require('../controllers/gallerycontroller.js');
+const cards = require('../controllers/cardscontroller.js');
+const Category = require('../models/category');
+const Blogs = require('../models/blogs');
+// const User = require('../models/signup');
+const Cards = require('../models/cards');
+const Gallery = require('../models/gallery');
 //models
+
 const User = require("../models/signup.js");
 
+route.get('/',async(req,res) => {
+  // const name="here";
+  const categories = await Category.find({}).limit(8);
+  const blogs = await Blogs.find({}).limit(3);
+  const cards = await Cards.find({}).limit(4);
+  const gallery = await Gallery.find({}).limit(20);
+  res.render("list",{message:'',names:'',categories,blogs,cards,gallery});
+  // console.log(categories);
 
-// route.get("/", function(req,res){
-//     const name = "here";
-//     res.render("list", {webname:name,message:''})
+//   try {
+//   const limitNumber = 8;
+//   const blognumber = 3;
+//   const cardNumber = 4;
+//   const galleryNumber =20;
+//   // const User = 1;
+//   const categories = await Category.find({}).limit(limitNumber);
+//   const blogs = await Blogs.find({}).limit(blognumber);
+//   const cards = await Cards.find({}).limit(cardNumber);
+//   const gallery = await Gallery.find({}).limit(galleryNumber);
+//   const name="here";
+//   res.render("list",{message:'',names:'',webname:name,categories ,blogs ,cards,gallery});
+//   // console.log(categories);
+// } catch (error) {
+//   res.status(500).send({message: error.message || "Error Ocured"});
+// }
+});
+// route.get("/",function(req,res){
+//   res.render("list",{message:'',names:'',webname:name,categories ,blogs ,cards,gallery});
 //  });
  route.get("/login",function(req,res){
   res.render("register",{message:''});
@@ -24,7 +60,11 @@ const User = require("../models/signup.js");
  route.get("/review",function(req,res){
   res.render("card");
  });
-//  route.get("/secrets",function(req,res){
+//  route.get("/",function(req,res){
+//   const name = "here";
+//   res.render("list",{webname:name , message:''});
+//  });
+// //  route.get("/secrets",function(req,res){
 //   res.render("secrets");
 //  });
  route.get("/secrets",function(req,res){
@@ -103,9 +143,13 @@ else{
 
 
 //Login Page
-route.post("/login", function(req,res){
+route.post("/login", async function(req,res){
   const username = req.body.email;
   const password = req.body.password;
+  const categories = await Category.find({}).limit(8);
+  const blogs = await Blogs.find({}).limit(3);
+  const cards = await Cards.find({}).limit(4);
+  const gallery = await Gallery.find({}).limit(20);
   User.findOne({email:username},function(err,foundUser){
     if(err){
       console.log(err);
@@ -113,7 +157,12 @@ route.post("/login", function(req,res){
       if(foundUser){
        bcrypt.compare(password,foundUser.password,function(err,result){
         if(result==true) {
-          return  res.render("register",{message:'Logged in successfully'});
+          console.log(foundUser.name);
+        //  return res.redirect("/");
+        
+         return res.render("list",{message:'Logged in Successfully',blogs:blogs,names:foundUser.name,cards:cards,categories:categories,gallery:gallery});
+       
+          // return res.render("register",{message:'Hey !! ' + foundUser.name + ' Welcome to Our Website',});
         }
         else{
           return res.render("register",{message:'Something went wrong'});
